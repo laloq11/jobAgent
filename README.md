@@ -30,8 +30,8 @@ mkdir -p ~/.claude ~/.ssh && touch ~/.claude.json
 The devcontainer mounts these three paths (Claude Code login, SSH keys for `git push`) and reads `.env`;
 it does not start if one is missing.
 
-**Notion:** create a database with the properties listed in
-[`newusers.md` → "What do I need from Notion"](newusers.md#what-do-i-need-from-notion), create an
+**Notion:** duplicate the [Notion template](https://app.notion.com/p/6040006209cd827db8e6811839ea7e83?v=a700006209cd837199a908d6dea8e8c3&source=copy_link) into your workspace (or create a database with
+the properties listed in [`newusers.md` → "What do I need from Notion"](newusers.md#what-do-i-need-from-notion)), create an
 integration at [notion.so/my-integrations](https://www.notion.so/my-integrations), connect it to the
 database, and put `NOTION_TOKEN` and `NOTION_DB_ID` into `.env`. Optional keys (Adzuna, SMTP for the
 digest email) are explained in `.env.example`.

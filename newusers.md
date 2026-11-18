@@ -51,8 +51,8 @@ otherwise the devcontainer keeps running the old image.
 
 ## What do I need from Notion
 
-1. Create a full-page database in your workspace (any name, e.g. "Job Pipeline")
-   with the properties listed below (names and types must match).
+1. Duplicate the [Notion template](https://app.notion.com/p/6040006209cd827db8e6811839ea7e83?v=a700006209cd837199a908d6dea8e8c3&source=copy_link) into your workspace, or create a
+   full-page database with the properties listed below (names and types must match).
 2. Create an integration and connect it to the database (see `.env` table above).
 3. Copy the database id into `NOTION_DB_ID`.
 4. Run `python3 -m jobs_agent.scripts.setup_check`: it compares the database
