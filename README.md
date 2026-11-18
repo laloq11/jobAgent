@@ -7,6 +7,8 @@ iterate and apply by hand. Nothing is submitted automatically and nothing runs o
 
 No LLM API calls in Python: scoring and drafting run inside Claude Code (your Claude subscription).
 
+**Who this is for**: you already use Claude Code (paid plan), your CV is in LaTeX, and you have a Notion account. Job sources focus on Germany / EU / UK, and the example keywords are tuned for engineering and simulation roles; other countries or fields need your own searches and keywords.
+
 Contents: [0. Setup](#0-setup) · [Privacy](#privacy) · [1. Every session](#1-every-session) ·
 [2. After a run](#2-after-a-run-case-by-case) · [3. Iterating on a draft](#3-iterating-on-a-draft-with-claude-code) ·
 [4. Cheat sheet](#4-cheat-sheet) · [5. How the agent improves](#5-how-the-agent-improves)
