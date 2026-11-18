@@ -39,6 +39,10 @@ def check_notion() -> None:
         from jobs_agent.core.notion_repo import NotionRepo
         repo = NotionRepo()
         props = repo.client.data_sources.retrieve(data_source_id=repo.data_source_id)["properties"]
+    except ModuleNotFoundError as e:
+        problems.append(f"Python package missing ({e.name}): run inside the devcontainer, "
+                        "or pip install -r requirements.txt")
+        return
     except Exception as e:  # missing env vars, bad token, DB not shared with the integration
         problems.append(f"Notion: {type(e).__name__}: {e}")
         return

@@ -284,5 +284,4 @@ Four loops: **facts** (answers and re-confirmed statements go into `me_ai_master
 
 # License
 
-MIT, see [`LICENSE`](LICENSE). `.claude/skills/humanizer/` is adapted from
-[blader/humanizer](https://github.com/blader/humanizer) (MIT).
+MIT, see [`LICENSE`](LICENSE).

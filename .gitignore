@@ -4,6 +4,9 @@ logs/
 .env*
 !.env.example
 
+# Local-only skills (not part of the release)
+.claude/skills/humanizer/
+
 __pycache__/
 .pytest_cache/
 
