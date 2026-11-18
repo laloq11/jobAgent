@@ -1,0 +1,19 @@
+# Companies to ignore automatically. Hand-edited: add or remove names here, and
+# leave a comment on each entry saying why (Notion rows point back to this file).
+#
+# Match: a row is ignored if its company name CONTAINS an entry, ignoring case,
+# spaces and punctuation. "acme corp" matches "acme-corp" (Ashby slug) and
+# "ACME Corp GmbH" (job boards). Keep entries specific: a short entry like "intel"
+# would also match "Intelligent Systems GmbH".
+#
+# Effect:
+# - run_ingest: new postings from these companies are not inserted (counted as
+#   `ignored` in the log). They are not marked seen, so removing a name brings
+#   its current postings back on the next ingest.
+# - close_stale: open rows (not_started, needs_review, approved_draft) from these
+#   companies get status `ignore` and todo "ignored: '<entry>' is on <this file>".
+#   Rows further along (drafting, needs_final_review, submitted, ...) are not touched.
+
+ignore: []
+# Example:
+#  - acme corp   # reason

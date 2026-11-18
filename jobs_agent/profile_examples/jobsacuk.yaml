@@ -1,0 +1,27 @@
+# jobs.ac.uk PhD searches, read by adapters/jobsacuk.py. Hand-edited.
+# jobs.ac.uk dropped its RSS feeds (Nov 2026), so the adapter reads the search
+# result pages (server-rendered HTML, allowed by robots.txt) with the site's own
+# "PhDs" job-type filter, newest first, and fetches each new posting's detail page.
+# Each keyword below is one search. Keep the list narrow: every new result costs
+# one detail request (1 per second); results already in data/seen.db are skipped.
+# Vet a change:  python3 -m jobs_agent.scripts.run_ingest --adapters jobsacuk --dry-run
+
+job_type: phds          # jobTypeFacet[] value on jobs.ac.uk ("phds" or "masters")
+max_pages: 2            # 25 results per page, newest first
+
+searches:
+  - CFD
+  - computational fluid dynamics
+  - fluid dynamics
+  - fluid mechanics
+  - turbulence
+  - heat transfer
+  - HPC
+  - high performance computing
+  - GPU
+  - scientific computing
+  - finite element
+  - topology optimisation
+  - reduced order model
+  - surrogate model
+  - scientific machine learning

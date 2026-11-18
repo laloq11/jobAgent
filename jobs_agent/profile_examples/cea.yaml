@@ -1,0 +1,53 @@
+# CEA thesis offers, read by adapters/cea.py. Hand-edited.
+# The list (https://www.theses-postdocs.cea.fr, English view) has ~130 offers on
+# ~14 pages. The domain filter is lost when paging, so every page is read and
+# the detail page is fetched only for offers that pass the cheap check below:
+#   category in `categories`  OR  list title contains one of `title_keywords`
+# (case-insensitive substring). filter.yaml and /jobs scoring decide the rest.
+# Vet a change:  python3 -m jobs_agent.scripts.run_ingest --adapters cea --dry-run
+
+max_pages: 30          # safety cap; the site wraps around to page 1 after the last page
+
+categories:            # CEA "Category" of the offer (shown in the list title)
+  - Engineering science
+
+title_keywords:
+  - simulation
+  - numerical
+  - comput            # computational, computing, computation
+  - fluid
+  - flow
+  - CFD
+  - HPC
+  - GPU
+  - exascale
+  - solver
+  - turbulen
+  - thermal
+  - thermohydraul
+  - thermal-hydraul
+  - heat
+  - combustion
+  - multiphase
+  - two-phase
+  - boiling
+  - mesh
+  - finite element
+  - finite volume
+  - Galerkin
+  - spectral
+  - reduced order
+  - reduced-order
+  - surrogate
+  - machine learning
+  - neural
+  - physics-informed
+  - data assimilation
+  - optimization
+  - optimisation
+  - modelling
+  - modeling
+  - multiscale
+  - multi-scale
+  - lattice Boltzmann
+  - Navier

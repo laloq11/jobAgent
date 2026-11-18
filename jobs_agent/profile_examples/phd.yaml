@@ -1,0 +1,47 @@
+# What you want from a PhD (Track B). Example for CFD / scientific computing. Read by the /jobs scoring step for PhD postings,
+# and by /cv-tailoring for the motivation letter (as aims, never as experience).
+# Hand-edited. Delete it if you only apply to industry jobs.
+
+phd_profile:
+  core_topics:            # at least one must match, otherwise score <= 4
+    - high-performance scientific computing for CFD (C++, CUDA/HIP, MPI)
+    - GPU-accelerated / matrix-free solvers (FEM, DG, spectral element)
+    - topology optimization for thermal / fluid design (adjoint-based)
+    - surrogate modeling / reduced-order models for fluid flow (POD, NN, operator learning)
+    - ML integrated into solvers (hybrid physics-ML)
+
+  keywords_positive:      # each clear match raises the score
+    [CFD, Navier-Stokes, conjugate heat transfer, matrix-free, GPU, CUDA, HPC,
+     exascale, deal.II, OpenFOAM, adjoint, topology optimization, reduced-order model,
+     POD, neural operator, scientific machine learning, open-source solver]
+
+  keywords_negative:      # main focus on one of these -> score <= 4
+    [pure experimental, wet lab, purely data science without physics,
+     structural-only FEM, molecular dynamics, climate policy]
+
+  role_type:
+    must_be: [doctoral researcher, PhD position, wissenschaftliche/r Mitarbeiter/in (Promotion)]
+    exclude: [postdoc]                  # -> low_fit
+
+  location:
+    preferred: [Germany]
+    acceptable: [Austria, Switzerland, Netherlands, Belgium, Sweden, Denmark, Norway,
+                 Finland, rest of EU, United Kingdom]   # -1 compared to Germany
+    exclude: []                         # outside Europe -> low_fit
+
+  funding:
+    min_contract: "TV-L E13 >= 65%"     # or equivalent outside DE; below -> low_fit
+    duration_years_min: 3
+
+  start_date: open                      # not decided yet
+
+  group_signals:          # each one raises the score
+    - group develops/maintains an open-source code
+    - HPC cluster or GPU access mentioned
+    - industry collaboration in thermal/fluid domain
+
+  dream_targets: []       # group names: never below needs_review; watch their pages via watch.yaml
+
+  language:
+    english: ok
+    german_only: keep, score -1

@@ -1,0 +1,22 @@
+{
+  "name": "jobAgent",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python"]
+    }
+  },
+  // Host paths must exist before the first build (see README "Setup"):
+  //   ~/.claude, ~/.claude.json  -> Claude Code login survives rebuilds
+  //   ~/.ssh                     -> git push over SSH (read-only)
+  //   .env                       -> secrets, injected as environment variables
+  "mounts": [
+    "source=${localEnv:HOME}/.ssh,target=/root/.ssh,type=bind,readonly",
+    "source=${localEnv:HOME}/.claude,target=/root/.claude,type=bind",
+    "source=${localEnv:HOME}/.claude.json,target=/root/.claude.json,type=bind"
+  ],
+  "runArgs": ["--env-file=${localWorkspaceFolder}/.env"]
+}

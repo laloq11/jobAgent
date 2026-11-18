@@ -1,0 +1,14 @@
+# Runtime
+notion-client>=2.6
+httpx
+pyyaml
+pydantic
+pydantic-settings
+tenacity
+pypdf
+beautifulsoup4
+lxml
+feedparser
+markdown
+# Tests
+pytest

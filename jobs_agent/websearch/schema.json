@@ -1,0 +1,26 @@
+{
+  "type": "object",
+  "properties": {
+    "postings": {
+      "type": "array",
+      "maxItems": 40,
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {"type": "string", "description": "Exactly as written on the page, in the page's language"},
+          "institution": {"type": "string"},
+          "url": {"type": "string", "description": "The institution's own posting page that you opened"},
+          "found_via": {"type": "string", "description": "Where you first saw it: web search, indeed, linkedin, euraxess, ..."},
+          "location": {"type": "string", "description": "City, country"},
+          "posted_date": {"type": "string", "description": "YYYY-MM-DD if the page states it, else empty"},
+          "deadline": {"type": "string", "description": "YYYY-MM-DD if the page states it, else empty"},
+          "why": {"type": "string", "description": "One short line: which core topic it matches"}
+        },
+        "required": ["title", "institution", "url", "found_via"]
+      }
+    },
+    "searches_done": {"type": "array", "items": {"type": "string"}},
+    "notes": {"type": "string"}
+  },
+  "required": ["postings", "searches_done"]
+}

@@ -1,0 +1,14 @@
+# Companies of interest, watched on Greenhouse / Ashby (all their jobs, any location).
+# Add display names / slugs to `allow`. Then run:
+#   python3 -m jobs_agent.scripts.probe_greenhouse
+#   python3 -m jobs_agent.scripts.probe_ashby
+# to check which are on Greenhouse / Ashby and fill `confirmed` / `confirmed_ashby`.
+# DO NOT put comments below `confirmed:` — the section is auto-managed.
+
+allow:
+  - celonis
+  - anyscale
+
+confirmed:
+
+confirmed_ashby:

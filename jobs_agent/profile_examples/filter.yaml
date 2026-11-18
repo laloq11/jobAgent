@@ -1,0 +1,93 @@
+# Example tuned for CFD / simulation roles: replace with your own field.
+# Cheap keyword filter for job postings.
+# Matching: case-insensitive substring over role + summary + tags + notes.
+# Rule: any `block` hit rejects. Else any `allow` hit accepts. Else rejects.
+
+allow:
+  # CFD / simulation
+  - CFD
+  - computational fluid
+  - fluid dynamics
+  - simulation engineer
+  - simulation
+  - simulations
+  - OpenFOAM
+  - SU2
+  - Nek5000
+  - ANSYS
+  - STAR-CCM
+  - solver
+  - numerical
+  - reduced-order
+  - reduced order model
+  - ROM
+  # HPC / GPU
+  - HPC
+  - GPU
+  - CUDA
+  - high performance computing
+  - parallel computing
+  # Thermal
+  - thermal
+  - heat transfer
+  - thermodynamics
+  # Roles
+  - computational engineer
+  - research engineer
+  - simulation specialist
+  - modeling engineer
+  - modelling engineer
+  # Domain
+  - aerospace
+  - automotive
+  - turbomachinery
+  - propulsion
+  # PhD topics (see phd.yaml)
+  - Navier-Stokes
+  - Strömungsmechanik
+  - Strömungssimulation
+  - matrix-free
+  - discontinuous Galerkin
+  - spectral element
+  - deal.II
+  - adjoint
+  - topology optimization
+  - Topologieoptimierung
+  - machine learning
+  - scientific machine learning
+  - surrogate model
+  - surrogates
+  - surrogate 
+  - turbulent
+  - finite element
+  - Hochleistungsrechnen
+
+block:
+  # Common noise on Arbeitnow
+  - Steuerberater
+  - Pflege
+  - Niederlassungsleiter
+  - Finanzberater
+  - Marketing Manager
+  - Customer Success
+  - Sales Manager
+  - Vertrieb
+  - Recruiter
+  - HR Manager
+  - Kaufm
+  - Buchhalt
+  - Marketplace
+  - Disponent
+  # Not my level / not my role
+  - Werkstudent
+  - Working Student
+  - Praktikum
+  - Praktikant
+  - Internship
+  - Abschlussarbeit
+  - Masterarbeit
+  - Bachelorarbeit
+  - Technician
+  - Techniker
+  - Account Executive
+  - Account Manager

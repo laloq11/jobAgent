@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# Blocks commits that would publish personal data. Enabled by
+#   git config core.hooksPath .githooks     (init_user does this)
+# 1. No staged path under data/ or logs/, no .env, no PDF / Word / image files.
+# 2. No added line containing a pattern from data/private_patterns.txt
+#    (git-ignored, one fixed string per line, case-insensitive: your name, email, ...).
+set -euo pipefail
+
+fail=0
+paths=$(git diff --cached --name-only --diff-filter=ACMR)
+
+bad_paths=$(printf '%s\n' "$paths" | grep -E '^(data|logs)/|(^|/)\.env($|[^.])|\.env\.(local|prod)|\.(pdf|docx?|png|jpe?g|db)$' || true)
+if [ -n "$bad_paths" ]; then
+  echo "pre-commit: blocked files (personal data or binaries):"; printf '%s\n' "$bad_paths" | sed 's/^/  /'
+  fail=1
+fi
+
+patterns=data/private_patterns.txt
+if [ -s "$patterns" ]; then
+  hits=$(git diff --cached -U0 --no-color | grep -E '^\+[^+]' | grep -i -F -f <(grep -v -E '^\s*(#|$)' "$patterns") || true)
+  if [ -n "$hits" ]; then
+    echo "pre-commit: added lines match $patterns:"; printf '%s\n' "$hits" | head -20
+    fail=1
+  fi
+else
+  echo "pre-commit: warning: $patterns missing or empty, personal-string check skipped"
+fi
+
+[ $fail -eq 0 ] || { echo "Commit aborted. Unstage with: git restore --staged <file>"; exit 1; }

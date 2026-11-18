@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -m jobs_agent.scripts.run_ingest:*)",
+      "Bash(python3 -m jobs_agent.scripts.pending:*)",
+      "Bash(python3 -m jobs_agent.scripts.update_row:*)",
+      "Bash(python3 -m jobs_agent.scripts.build_pdf:*)",
+      "Bash(python3 -m jobs_agent.scripts.run_notify:*)",
+      "Bash(date -u:*)",
+      "Read(data/**)",
+      "Write(data/applications/00_drafts/**)",
+      "Edit(data/applications/00_drafts/**)",
+      "WebFetch"
+    ],
+    "deny": ["Read(.env)"]
+  }
+}

@@ -1,0 +1,45 @@
+% CV template, Track A (industry). Fictional content: replace everything with facts
+% from data/info/me_ai_master.md. Keep it to one page (build_pdf checks this).
+\documentclass[10pt]{article}
+\usepackage[a4paper,margin=1.6cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\setlist[itemize]{leftmargin=1.2em,itemsep=1pt,topsep=2pt}
+\titleformat{\section}{\large\bfseries}{}{0pt}{}[\vspace{-0.6em}\rule{\linewidth}{0.4pt}]
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\raggedright
+
+\newcommand{\entry}[3]{\textbf{#1} \hfill #3\\ \textit{#2}\\}
+
+\begin{document}
+
+{\LARGE\bfseries Alex Example}\\[2pt]
+City, Country \textbullet{} alex@example.com \textbullet{} \href{https://github.com/example}{github.com/example}\\[4pt]
+\textit{Simulation Engineer with experience in CFD, thermal design and Python automation.}
+
+\section{Experience}
+\entry{Example GmbH, Simulation Engineer}{City, Country}{2024 -- present}
+\begin{itemize}
+  \item Built CFD models of electronic enclosures and validated them against measurements.
+  \item Automated pre- and post-processing in Python, cutting setup time per case.
+\end{itemize}
+
+\section{Projects}
+\entry{Master's thesis: heat transfer in a heated channel}{Example University}{2023}
+\begin{itemize}
+  \item Compared turbulence models against reference data for a heated channel flow.
+\end{itemize}
+
+\section{Education}
+\entry{M.Sc. Mechanical Engineering}{Example University}{2021 -- 2023}
+
+\section{Skills}
+\textbf{Simulation:} OpenFOAM, ANSYS Fluent\\
+\textbf{Programming:} Python, C++\\
+\textbf{Languages:} English (C1), German (B1)
+
+\end{document}

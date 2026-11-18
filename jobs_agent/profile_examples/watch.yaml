@@ -1,0 +1,12 @@
+# Dream-target pages watched by adapters/watch.py. Hand-edited.
+# A Notion row "[watch] <name>: page changed" appears whenever the lines on the
+# page that contain a keyword change. These rows skip filter.yaml.
+# keywords is optional (default: PhD, doctoral, Doktorand, Promotion, position, Stelle, vacancy).
+
+watch: []
+# Example entry:
+#  - name: Some research group (University X)
+#    url: https://www.example.edu/group/vacancies
+#    company: University X - Some group
+#    location: City, Country
+#    keywords: [PhD, position]

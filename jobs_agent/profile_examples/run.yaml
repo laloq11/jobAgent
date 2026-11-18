@@ -1,0 +1,5 @@
+# Limits for one /jobs run (Claude Code usage scales with these).
+score_threshold: 7       # Fit Score >= score_threshold -> approved_draft (drafted)
+review_threshold: 5      # review_threshold <= score < score_threshold -> needs_review (I decide); below -> low_fit
+max_score_per_run: 15    # unscored rows scored per run
+max_drafts_per_run: 5    # CV + letter pairs drafted per run

@@ -1,0 +1,49 @@
+# PhD web search: Claude Code (claude -p) searches the web and the Indeed
+# connector, then the `websearch` adapter re-fetches and checks every result.
+# Hand-edited. Uses your Claude subscription's usage limits (shared with /jobs scoring and
+# drafting): started by hand or by `/jobs --phd-search`, never on a timer.
+#   bash jobs_agent/scripts/phd_websearch.sh            # respects min_days_between_runs
+#   bash jobs_agent/scripts/phd_websearch.sh --force    # run anyway
+# Results: data/websearch/results/<date>.json, read by run_ingest (adapter `websearch`).
+
+min_days_between_runs: 7      # guard instead of a timer
+max_posting_age_days: 60      # drop a posting only if its page shows a publication date older than this
+                              # (most pages show none: still-open postings are kept; seen.db removes repeats)
+read_days: 14                 # the adapter reads result files from the last N days
+
+model: sonnet                 # main model: haiku | sonnet | opus (or a full model id). Web search and
+                              # page fetch results are already processed by Haiku inside Claude Code.
+max_budget_usd: 3.00          # cap per attempt (claude --max-budget-usd) on Claude Code's API-list-price
+                              # estimate. On a subscription nothing is charged; it limits usage. A run
+                              # that hits it returns nothing, so keep the soft limits well under it.
+                              # Sonnet runs so far: estimate $0.35-0.55 each.
+max_results: 25
+max_web_searches: 20          # soft limits, written into the prompt
+max_page_fetches: 25
+
+use_indeed: true              # claude.ai Indeed connector (discovery only, see original_only)
+max_indeed_searches: 6
+indeed_countries: [DE, AT, CH, NL]
+
+extra_queries: []             # optional search ideas on top of phd.yaml, e.g. "PhD lattice Boltzmann GPU"
+
+# Job portals where universities post doctoral positions. Claude runs site: searches on
+# them (general web search mostly surfaces closed postings). All checked Nov 2026:
+# no bot check, robots.txt allows job pages. Good candidates for real adapters later.
+portal_hints:
+  - academictransfer.com      # Netherlands, all universities
+  - varbi.com                 # Sweden (Lund, Chalmers, KTH, Uppsala, ...)
+  - jobbnorge.no              # Norway
+  - academics.de              # Germany
+  - jobs.ethz.ch              # ETH Zurich
+
+# Sites that block automated access (robots.txt / bot check) or give unstable links.
+# Claude may see postings there but must report the institution's own page; the
+# adapter drops any result that still points to one of these domains.
+original_only:
+  - linkedin.com
+  - indeed.com
+  - euraxess.ec.europa.eu
+  - findaphd.com
+  - cfd-online.com
+  - academicpositions.com

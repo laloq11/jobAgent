@@ -1,0 +1,13 @@
+# RSS / Atom job feeds read by adapters/rss.py. Hand-edited.
+# Entry: name (shown in Notes as feed=<name>), url, optional company / location
+# (used for every item of that feed, since feed items rarely carry them).
+# Vet a new feed first:  python3 -m jobs_agent.scripts.run_ingest --adapters rss --dry-run
+#
+# Find a portal's feed URL in its page source (<link rel="alternate" type="application/rss+xml">).
+
+feeds: []
+# Example entry:
+#  - name: Example University PhD
+#    url: https://jobs.example.edu/rss?keywords=PhD
+#    company: Example University
+#    location: City, Country

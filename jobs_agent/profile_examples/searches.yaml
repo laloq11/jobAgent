@@ -1,0 +1,19 @@
+# Search queries for the search-based adapters. Hand-edited.
+# Vet a change:  python3 -m jobs_agent.scripts.run_ingest --adapters adzuna bundesagentur --dry-run
+
+# Adzuna (https://developer.adzuna.com/docs/search): what = keywords, where = location,
+# distance = km. No "where" = whole country. Optional "country" (Adzuna code: de, at, ch,
+# nl, gb, ...) overrides the default "de".
+adzuna:
+  - {what: "CFD",                 where: "Berlin", distance: 100}
+  - {what: "simulation engineer", where: "Berlin", distance: 100}
+  - {what: "PhD CFD"}
+  - {what: "PhD CFD", country: ch}
+
+# Bundesagentur für Arbeit (https://github.com/bundesAPI/jobsuche-api): was = job title
+# free text, wo = location, umkreis = km (allowed: 0, 10, 15, 20, 50, 100, 200).
+# No "wo" = all of Germany.
+bundesagentur:
+  - {was: "CFD",                 wo: "Berlin", umkreis: 100}
+  - {was: "simulation engineer", wo: "Berlin", umkreis: 100}
+  - {was: "Doktorand CFD"}

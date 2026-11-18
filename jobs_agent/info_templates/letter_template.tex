@@ -1,0 +1,39 @@
+% Letter template (cover letter / motivation letter). Plain article class.
+% /cv-tailoring copies only the layout from here: preamble, header, recipient block,
+% subject line and sign-off. The body text below is a placeholder, never a source.
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[hidelinks]{hyperref}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{8pt}
+\raggedright
+
+\begin{document}
+
+{\Large\bfseries Alex Example}\\
+City, Country \textbullet{} alex@example.com \textbullet{} \href{https://github.com/example}{github.com/example}
+
+\vspace{12pt}
+Hiring Team\\
+Company Name\\
+City, Country
+
+\vspace{6pt}
+\today
+
+\textbf{Application for the position of Simulation Engineer}
+
+Dear Hiring Team,
+
+Opening paragraph: the role, and why this company and this position.
+
+Middle paragraph: the one or two most relevant projects, with facts from the master profile.
+
+Closing paragraph: availability and a short closing line.
+
+Kind regards,\\[18pt]
+Alex Example
+
+\end{document}

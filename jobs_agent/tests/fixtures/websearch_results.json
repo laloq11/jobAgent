@@ -1,0 +1,24 @@
+{
+  "created": "2026-11-17T12:00:00Z",
+  "model": "sonnet",
+  "cost_usd": 1.23,
+  "turns": 40,
+  "postings": [
+    {"title": "PhD Position (f/m/d): GPU-accelerated Matrix-free Solvers for CFD", "institution": "Example University",
+     "url": "https://uni.example.org/jobs/phd-gpu-cfd?utm_source=search#apply", "found_via": "indeed",
+     "location": "Exampleton, Germany", "posted_date": "2026-11-10", "deadline": "2026-12-15", "why": "matrix-free GPU solvers"},
+    {"title": "PhD Position: Adjoint Topology Optimisation of Heat Exchangers", "institution": "Example University",
+     "url": "https://uni.example.org/jobs/other", "found_via": "web search", "location": "Exampleton, Germany"},
+    {"title": "Doctoral Researcher CFD", "institution": "Some Company",
+     "url": "https://www.linkedin.com/jobs/view/123456", "found_via": "linkedin"},
+    {"title": "PhD in Scientific Computing", "institution": "Blocked Institute",
+     "url": "https://blocked.example.net/private/phd", "found_via": "web search"},
+    {"title": "PhD in Turbulence Modelling", "institution": "Challenge University",
+     "url": "https://cf.example.com/phd", "found_via": "web search"},
+    {"title": "PhD in Lattice Boltzmann Methods", "institution": "Example University",
+     "url": "https://uni.example.org/jobs/seen", "found_via": "web search"},
+    {"title": "", "institution": "Example University", "url": "not a url", "found_via": "web search"}
+  ],
+  "searches_done": ["PhD GPU CFD solver"],
+  "notes": ""
+}
